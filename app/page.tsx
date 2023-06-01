@@ -8,7 +8,10 @@ import Projects from './components/gallery/Projects'
 export default function Home() {
   return (
     <>
-      <main className="font-farsi ">
+      <main
+        className="font-farsi 
+      bg-page-gradient "
+      >
         {/* <Navbar /> */}
         <Hero />
         <Booking />

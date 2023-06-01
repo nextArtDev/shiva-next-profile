@@ -26,15 +26,29 @@ body {
     rgb(var(--background-start-rgb));
 } */
 body {
-  background-color: #1d1d1d;
+  /* background-color: #1d1d1d; */
   margin: 0 auto;
 }
-* {
-  /* border: 1px solid blue; */
+
+@layer base {
+  :root {
+    --navigation-height: 3rem;
+  }
+  html {
+    @apply bg-background text-white font-sans;
+    /* font-size: 62.5%; */
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: rgba(0, 0, 0, 0.56) 0px 3px 12px;
+  }
 }
 .glass {
   @apply bg-white bg-opacity-10 shadow-lg backdrop-filter backdrop-blur-md border border-opacity-25 border-white rounded-md glassWebkit;
 }
+
 .glassWebkit {
   -webkit-backdrop-filter: blur(2px);
 }

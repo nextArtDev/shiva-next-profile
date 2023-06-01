@@ -1,3 +1,4 @@
+import Navbar from './components/Navbar'
 import './globals.css'
 
 import localFont from 'next/font/local'
@@ -31,7 +32,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa-IR" dir="rtl">
-      <body className={`${primaryFont.variable} bg-gray-800 text-white `}>
+      <body className={`${primaryFont.variable} bg-gray-900 text-white `}>
+        <Navbar />
         {children}
       </body>
     </html>
