@@ -17,8 +17,12 @@ module.exports = {
       colors: {
         // background: '#1d1d1d',
         background: 'gray-900',
-        grey: 'rgb(138, 143, 152)',
+        transparent: 'transparent',
+        'off-white': '#f7f8f8',
+        'transparent-white': 'rgba(255, 255, 255, 0.08)',
+        grey: '#858699',
         'grey-dark': '#222326',
+        'primary-text': '#b4bcd0',
       },
       backgroundImage: {
         'primary-gradient':
@@ -79,7 +83,7 @@ module.exports = {
           '0%': { opacity: 0, transform: 'translateY(0)' },
           '5%': { opacity: 1, transform: 'translateY(0)' },
           '90%': { opacity: 1 },
-          '100%': { opacity: 0, transform: 'translateY(min(21vw, 45rem))' },
+          '100%': { opacity: 0, transform: 'translateY(min(1vw, 5rem))' },
         },
         zap: {
           '0%, 9%, 11%, 100% ': {
@@ -97,8 +101,8 @@ module.exports = {
       },
       animation: {
         'fade-in': 'fade-in 1000ms var(--animation-delay, 0ms) ease forwards',
-        'image-rotate': 'image-rotate 1400ms ease forwards',
-        'image-glow': 'image-glow 4100ms 600ms ease-out forwards',
+        'image-rotate': 'image-rotate 2000ms ease-in-out forwards',
+        'image-glow': 'image-glow 4100ms 1000ms ease-out forwards',
         'sketch-lines': 'sketch-lines 1200ms ease-out forwards',
         'glow-line-horizontal':
           'glow-line-horizontal var(--animation-duration) ease-in forwards',

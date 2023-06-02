@@ -90,7 +90,7 @@ function Booking() {
   }, [activePlaceId, activeDaysId])
   return (
     <section
-      className={`w-screen max-w-[1280px] h-screen text-white flex flex-col justify-evenly `}
+      className={`w-screen max-w-[1280px] h-screen md:mt-64 lg:mt-0 text-white flex flex-col justify-evenly mx-auto `}
     >
       <div className={`section-center flex flex-col justify-around `}>
         <h2 className="title">ساعت‌های کاری</h2>

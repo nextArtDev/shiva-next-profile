@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <main
         className="font-farsi 
-      bg-page-gradient "
+      bg-page-gradient text-primary-text "
       >
         {/* <Navbar /> */}
         <Hero />

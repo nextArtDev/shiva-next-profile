@@ -28,6 +28,7 @@ body {
 body {
   /* background-color: #1d1d1d; */
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 @layer base {
@@ -44,6 +45,9 @@ body {
   .text-shadow {
     text-shadow: rgba(0, 0, 0, 0.56) 0px 3px 12px;
   }
+}
+.task {
+  @apply flex flex-col glass h-full w-full justify-center items-center;
 }
 .glass {
   @apply bg-white bg-opacity-10 shadow-lg backdrop-filter backdrop-blur-md border border-opacity-25 border-white rounded-md glassWebkit;
@@ -141,3 +145,18 @@ body {
     margin-bottom: 0;
   }
 }
+
+.text-gradient {
+  background: linear-gradient(
+    #c0bfee2c 0.43%,
+    #7877c679 14.11%,
+    rgba(139, 138, 184, 0.637) 62.95%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 
+<svg id="eH9yPQkzCnF1" viewBox="0 0 300 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><path d="M54.524285,81.170991h210.246174l-1.996008,81.836328h-208.915502l-.665336-57.884232l192.282102-2.661344L243.479707,150h-163.672654l-1.330672-30.239521l47.904191-.665336-2.661344,54.557552" fill="none" stroke="#3f5787" stroke-width="0.6"/></svg>
+
+*/

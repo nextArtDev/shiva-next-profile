@@ -48,7 +48,7 @@ const Navbar = (props: Props) => {
         >
           <nav
             className={classNames(
-              ' md:opacity-100 h-[calc(100vh_-_var(--navigation-height))] md:h-auto md:relative fixed top-[var(--navigation-height)] md:top-0 left-0 w-full md:w-auto overflow-auto bg-background md:bg-transparent  transition-opacity duration-500',
+              ' md:opacity-100 h-[calc(100vh_-_var(--navigation-height))] md:h-auto md:relative fixed top-[var(--navigation-height)] md:top-0 left-0 w-full md:w-auto bg-background md:bg-transparent  transition-opacity duration-500',
               hamburgerMenuIsOpen ? 'opacity-100' : ' opacity-0 '
             )}
           >
