@@ -16,7 +16,7 @@ const ternaryFont = localFont({
   variable: '--font-rokh',
 })
 const numericFont = localFont({
-  src: '../public/fonts/IRANSansXFaNum-Black.woff2',
+  src: '../public/fonts/IRANSansXFaNum-Regular.woff2',
   variable: '--font-adad',
 })
 export const metadata = {
@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa-IR" dir="rtl">
-      <body className={`${primaryFont.variable} bg-gray-900 text-white `}>
+      <body className={`${primaryFont.variable} bg-gray-900 text-white adad `}>
         <Navbar />
         {children}
       </body>

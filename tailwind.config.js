@@ -39,11 +39,17 @@ module.exports = {
           'radial-gradient(circle at bottom center,var(--color),transparent 70%)',
         'glass-gradient':
           'linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%)',
+        'lines-gradient':
+          'linear-gradient(transparent,rgb(36, 0, 255),rgb(108, 39, 157),rgb(105, 30, 255),transparent)',
       },
       boxShadow: {
         primary: 'rgba(80, 63, 205, 0.5) 0px 1px 40px',
       },
       keyframes: {
+        'service-line': {
+          '0%': { transform: 'translate(-50%, -50%) rotate(0deg)' },
+          '100%': { transform: 'translate(-50%, -50%) rotate(360deg)' },
+        },
         'fade-in': {
           from: { opacity: 0, transform: 'translateY(-10px)' },
           to: { opacity: 1, transform: 'none' },
@@ -85,6 +91,7 @@ module.exports = {
           '90%': { opacity: 1 },
           '100%': { opacity: 0, transform: 'translateY(min(1vw, 5rem))' },
         },
+
         zap: {
           '0%, 9%, 11%, 100% ': {
             fill: 'transparent',
@@ -100,6 +107,7 @@ module.exports = {
         },
       },
       animation: {
+        'service-line': 'service-line 8s linear infinite',
         'fade-in': 'fade-in 1000ms var(--animation-delay, 0ms) ease forwards',
         'image-rotate': 'image-rotate 2000ms ease-in-out forwards',
         'image-glow': 'image-glow 4100ms 1000ms ease-out forwards',

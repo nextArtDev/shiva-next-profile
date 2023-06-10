@@ -5,10 +5,13 @@ import Container from './Container'
 import Button from './Button'
 import HamburgerIcon from './icons/HamburgerIcon'
 import classNames from 'classnames'
+import IconSquareInstagram from './icons/Instagram'
+import IconSquareWhatsapp from './icons/WhatsApp'
+import IconTelegram from './icons/Telegram'
 
 const menuLinks = [
   { id: 1, name: 'خانه', href: '/' },
-  { id: 4, name: 'خدمات', href: 'services' },
+  { id: 4, name: 'خدمات', href: '/services' },
   { id: 3, name: 'درباره من', href: 'about' },
   { id: 6, name: 'بلاگ', href: 'blogs' },
   { id: 5, name: 'تماس با من', href: 'connect' },
@@ -59,10 +62,20 @@ const Navbar = (props: Props) => {
               )}
             >
               {menuLinks.map((menuLink) => (
-                <li className="py-6" key={menuLink.id}>
-                  <Link href={menuLink.href}>{menuLink.name}</Link>
+                <li className="py-4" key={menuLink.id}>
+                  <Link
+                    href={menuLink.href}
+                    onClick={() => setHamburgerMenuIsOpen(false)}
+                  >
+                    {menuLink.name}
+                  </Link>
                 </li>
               ))}
+              <div className="md:hidden flex gap-4 text-4xl  pt-20 hover:cursor-pointer transition ">
+                <IconSquareInstagram className="text-red-500 hover:scale-110" />
+                <IconSquareWhatsapp className="text-green-400 hover:scale-110" />
+                <IconTelegram className="text-blue-400 hover:scale-110" />
+              </div>
             </ul>
           </nav>
         </div>

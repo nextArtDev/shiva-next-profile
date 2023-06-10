@@ -16,19 +16,24 @@ const images = [
 ]
 function FeaturedIn() {
   return (
-    <div className={`featured min-h-fit `}>
+    <div className={` h-52 `}>
       <div className={`container flex flex-col justify-around `}>
-        <h2 className={`heading title text-center`}>مشارکت و همکاری با</h2>
+        <h2 className={`heading title text-xl`}>سابقه همکاری با</h2>
         <div
-          className={`logo grid place-items-center gap-2 autoFitFeaturedIn `}
+          className={` -mt-36 logo grid place-items-center gap-2 autoFitFeaturedIn `}
         >
           {images.map((image) => (
-            <Image
+            <div
               key={image.id}
-              src={image.src}
-              alt={image.alt}
-              className="brightness-75 opacity-80 object-cover scale-75 "
-            />
+              className="flex flex-col justify-between gap-2 "
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                className=" flex-1 brightness-75 opacity-80 object-cover scale-75 "
+              />
+              <p className="text-xs text-center brightness-75 ">{image.alt}</p>
+            </div>
           ))}
         </div>
       </div>

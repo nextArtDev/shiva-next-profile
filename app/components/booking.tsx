@@ -1,168 +1,200 @@
 'use client'
+import { redirect } from 'next/dist/server/api-utils'
 import React, { useEffect, useState } from 'react'
 // import Tilt from 'react-parallax-tilt'
 import {
   MdOutlineDateRange,
   MdAccessTime,
+  MdShareLocation,
   MdOutlinePlace,
 } from 'react-icons/md'
 
 const Places = [
   { id: 0, name: 'کلینیک آیین شفق اصفهان' },
-  { id: 1, name: 'مرکز جراحی محدود صحت زرین شهر' },
-  { id: 2, name: 'مطب اصفهان' },
+  { id: 1, name: 'مطب اصفهان' },
 ]
-const Days = [
+const DaysForShafagh = [
   {
     id: 0,
     name: 'شنبه',
-    dayPlaceActive: [
-      { placeId: 0, activeHours: [2, 5] },
-      { placeId: 1, activeHours: [5, 6] },
-      { placeId: 2, activeHours: [4, 6] },
-    ],
+    activeHours: [15, 17],
   },
   {
     id: 1,
     name: '1 شنبه',
-    dayPlaceActive: [
-      { placeId: 0, activeHours: [] },
-      { placeId: 1, activeHours: [3, 5] },
-      { placeId: 2, activeHours: [3, 7] },
-    ],
+    activeHours: [11, 13],
   },
   {
     id: 2,
-    name: '2 شنبه',
-    dayPlaceActive: [
-      { placeId: 0, activeHours: [6, 5] },
-      { placeId: 1, activeHours: [4, 6] },
-      { placeId: 2, activeHours: [3, 5] },
-    ],
-  },
-  {
-    id: 3,
     name: '3 شنبه',
-    dayPlaceActive: [
-      { placeId: 0, activeHours: [1, 5] },
-      { placeId: 1, activeHours: [2, 5] },
-      { placeId: 2, activeHours: [5, 7] },
-    ],
+    activeHours: [16, 18],
+  },
+]
+const DaysForMatab = [
+  {
+    id: 0,
+    name: '1 شنبه',
+
+    activeHours: [17, 20],
   },
   {
-    id: 4,
+    id: 1,
+    name: '3 شنبه',
+    activeHours: [9, 12],
+  },
+  {
+    id: 2,
     name: '4 شنبه',
-    dayPlaceActive: [
-      { placeId: 0, activeHours: [5, 6] },
-      { placeId: 1, activeHours: [1, 5] },
-      { placeId: 2, activeHours: [1, 4] },
-    ],
+    activeHours: [17, 20],
   },
 ]
-const Hours = [
-  { id: 0, name: '9:00' },
-  { id: 1, name: '10:00' },
-  { id: 2, name: '11:00' },
-  { id: 3, name: '16:00' },
-  { id: 4, name: '17:00' },
-  { id: 5, name: '18:00' },
-  { id: 6, name: '19:00' },
-  { id: 7, name: '13:00' },
-]
-function Booking() {
+type Props = {}
+
+const Services = (props: Props) => {
   const [activePlaceId, setActivePlaceId] = useState(0)
-  const [activeDaysId, setActiveDaysId] = useState(0)
-  const [activeHoursId, setActiveHoursId] = useState([2, 3])
-  // useEffect(()=>{
-  // },[activeDaysId ,activePlaceId ])
-  const { activeHours } = Days[activeDaysId].dayPlaceActive[activePlaceId]
+  const handleLocation = () => {
+    return <a href="https://goo.gl/maps/xN9L5CeiHZUVZ9y98"></a>
+  }
 
   const placeHandler = (id: number) => {
     setActivePlaceId(id)
   }
-  const dayHandler = (id: number) => {
-    setActiveDaysId(id)
-    setActiveHoursId(activeHours)
-    console.log(activeHoursId)
-  }
-  useEffect(() => {
-    setActiveHoursId(activeHours)
-  }, [activePlaceId, activeDaysId])
+  const Days = activePlaceId === 0 ? DaysForShafagh : DaysForMatab
   return (
-    <section
-      className={`w-screen max-w-[1280px] h-screen md:mt-64 lg:mt-0 text-white flex flex-col justify-evenly mx-auto `}
-    >
-      <div className={`section-center flex flex-col justify-around `}>
-        <h2 className="title">ساعت‌های کاری</h2>
-        <div className={`container grid gap-10 p-2 `}>
-          <article className={`places  `}>
-            <h4 className="subtitle text-right">انتخاب مطب و بیمارستان</h4>
-            <div className={`placeBtns grid grid-cols-3 gap-3`}>
-              {Places.map((place) => (
-                // <Tilt
-                //   tiltReverse={true}
-                //   glareEnable={true}
-                //   glareMaxOpacity={0.9}
-                //   glareColor="lightblue"
-                //   glarePosition="all"
-                //   tiltMaxAngleX="5"
-                //   tiltMaxAngleY="5"
-                // >
-                <div
-                  key={place.id}
-                  className={`placebtn self-stretch flex flex-col justify-center items-center glass cursor-pointer ${
-                    activePlaceId === place.id ? 'active' : ''
-                  }`}
-                  onClick={() => placeHandler(place.id)}
-                >
-                  <MdOutlinePlace className={`icon text-[1.5rem]`} />
-                  <h4 className={`place `}>{place.name}</h4>
-                </div>
-                // </Tilt>
-              ))}
-            </div>
-          </article>
-          <article className={`weeks`}>
-            <h4 className=" subtitle text-right">انتخاب روز</h4>
-            <div className={`week grid autoFitWeek gap-2 `}>
+    <section className=" max-w-[95%] md:max-w-[75%] w-screen h-screen md:h-[70vh] mx-auto mb-32 rounded-lg ">
+      <h2 className="title">ساعت‌های کاری</h2>
+      <div className="relative w-full h-full overflow-hidden ">
+        <div className="lines inner-gradient mt-20  before:w-[2000px] before:h-[150%] after:bg-gray-900 after:blur-3xl after:rounded-lg rounded-br-lg rounded-bl-lg" />
+        {/*Right icon is upper part  */}
+
+        <div
+          onClick={() => setActivePlaceId(0)}
+          className={`absolute top-[2px] right-0 w-[49%] h-20 bg-transparent overflow-hidden rounded-tr-lg cursor-pointer ${
+            activePlaceId === 0 ? '' : 'booking-glass-right text-white/40'
+          } `}
+        >
+          <span className="absolute w-full flex flex-col justify-evenly items-center text-center  z-20 ">
+            <MdOutlinePlace
+              className={`icon text-center text-[1.5rem] my-2 `}
+            />
+            <h4 className="font-semibold">کلینیک آیین شفق اصفهان </h4>
+          </span>
+          {activePlaceId === 0 && (
+            <div className="lines inner-gradient before:w-[1000px] before:h-96 after:bg-gray-900 after:blur-2xl  after:rounded-tr-lg rounded-tr-lg" />
+          )}
+        </div>
+
+        {/* Left icon is upper part  */}
+        <div
+          onClick={() => setActivePlaceId(1)}
+          className={`absolute left-0 w-[49%] h-20 bg-transparent z-10 overflow-hidden rounded-tl-lg cursor-pointer ${
+            activePlaceId === 1 ? '' : 'booking-glass-left  text-white/40 '
+          }  `}
+        >
+          <span className="absolute w-full flex flex-col justify-center items-center text-center  z-20  ">
+            <MdOutlinePlace
+              className={`icon  text-center text-[1.5rem] my-2 `}
+            />
+            <h4 className="font-semibold">مطب اصفهان</h4>
+          </span>
+          {activePlaceId === 1 && (
+            <div className="lines inner-gradient  before:w-[1000px] before:h-96 after:bg-gray-900 after:blur-2xl after:rounded-tl-lg  rounded-tl-lg" />
+          )}
+        </div>
+        <div className="absolute inset-0 bg-transparent top-20 flex flex-col md:flex-row ">
+          <article className={`weeks flex flex-col`}>
+            {/* <div className="flex justify-evenly">
+              <h4 className=" subtitle text-right">روز</h4>
+              <h4 className="subtitle">ساعت‌های فعالیت</h4>
+            </div> */}
+            <div className={`week pt-8`}>
               {Days.map((day) => (
                 <div
                   key={day.id}
-                  className={`days flex flex-col justify-evenly items-center p-1 cursor-pointer glass ${
-                    activeDaysId === day.id ? 'active' : ''
-                  }`}
-                  onClick={() => dayHandler(day.id)}
+                  className={`days  flex justify-around items-center p-2 m-4 glass mix-blend-plus-lighter `}
                 >
-                  <MdOutlineDateRange className={`icon text-[1.5rem]`} />
-                  <h4>{day.name}</h4>
+                  <div className="flex flex-col md:flex-row py-2 md:px-2 items-center ">
+                    <MdOutlineDateRange
+                      className={`icon text-[1rem] my-2 md:mx-2 `}
+                    />
+                    <h4 className="text-[var(--clr-neon1)]">{day.name}</h4>
+                  </div>
+                  <div className="place">
+                    <div className="flex flex-col md:flex-row md:justify-evenly md:mr-6 items-center ">
+                      <MdAccessTime className={`icon text-[1.5rem] m-2 `} />
+                      <p>
+                        از ساعت{' '}
+                        <span className="text-[var(--clr-neon1)] py-2 md:px-2 ">
+                          {day.activeHours[0]}
+                        </span>{' '}
+                        تا ساعت{' '}
+                        <span className="text-[var(--clr-neon1)] py-2 md:px-2 ">
+                          {day.activeHours[1]}
+                        </span>{' '}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
           </article>
-          <article className={`times`}>
-            <h4 className="subtitle">ساعت‌های فعالیت</h4>
-            <div className={`time grid grid-cols-4 gap-2 mx-2 text-center `}>
-              {Hours.map((hour, i) => {
-                const [firstHour, secondHour] = activeHoursId
-
-                return (
-                  <div
-                    key={hour.id}
-                    className={`hours flex justify-items-end items-center glass ${
-                      hour.id === firstHour && 'active'
-                    }  ${hour.id === secondHour && 'active'}`}
-                  >
-                    <h4 className={`hour `}>{hour.name}</h4>
-                    <MdAccessTime className={`icon text-[1.75rem]`} />
-                  </div>
+          {/* map  */}
+          <article className="z-20 mix-blend-screen mx-auto  ">
+            <div className=" bg-violet-800/30 mx-2 p-4 mt-6 text-sm font-semibold z-10 rounded-3xl  mix-blend-multiply ">
+              {activePlaceId === 1 ? (
+                <p>خیابان شمس آبادی، ساختمان پزشکان، طبقه دوم، واحد 210</p>
+              ) : (
+                <p>اصفهان، خیابان شفق، بیمارستان آیین شفق</p>
+              )}
+            </div>
+            <div
+              className="relative w-56 h-56 z-20 mx-auto mt-2 "
+              onClick={() =>
+                window.open(
+                  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3359.2407402349572!2d51.66354817552245!3d32.653037240311974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fbc3575649bfa29%3A0xd21a5cbab64fd330!2z2LPYp9iu2KrZhdin2YYg2b7Ysti02qnYp9mGINmC2YXYsSDYp9mE2K_ZiNmE2Yc!5e0!3m2!1sen!2s!4v1686296244882!5m2!1sen!2s'
                 )
-              })}
+              }
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3359.2407402349572!2d51.66354817552245!3d32.653037240311974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fbc3575649bfa29%3A0xd21a5cbab64fd330!2z2LPYp9iu2KrZhdin2YYg2b7Ysti02qnYp9mGINmC2YXYsSDYp9mE2K_ZiNmE2Yc!5e0!3m2!1sen!2s!4v1686296244882!5m2!1sen!2s"
+                loading="lazy"
+                className="w-56 h-56"
+                style={{ borderRadius: '50%', opacity: '60%' }}
+              ></iframe>
+              <div
+                className="rounded-full absolute inset-0 w-full h-full text-violet-900/50 drop-shadow-2xl cursor-pointer flex justify-center items-center text-9xl outline-8 outline-double -outline-offset-8 outline-violet-900/60 "
+                onClick={() =>
+                  window.open(
+                    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3359.2407402349572!2d51.66354817552245!3d32.653037240311974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fbc3575649bfa29%3A0xd21a5cbab64fd330!2z2LPYp9iu2KrZhdin2YYg2b7Ysti02qnYp9mGINmC2YXYsSDYp9mE2K_ZiNmE2Yc!5e0!3m2!1sen!2s!4v1686296244882!5m2!1sen!2s'
+                  )
+                }
+              >
+                <MdShareLocation className="text-violet-900/50 drop-shadow-2xl " />
+              </div>
             </div>
           </article>
         </div>
+        {/* 
+                            <Tilt
+                              tiltReverse={true}
+                              glareEnable={true}
+                              glareMaxOpacity={0.9}
+                              glareColor="lightblue"
+                              glarePosition="all"
+                              tiltMaxAngleX="5"
+                              tiltMaxAngleY="5"
+                            >
+                             </Tilt> */}
+        {/* <section
+          className={` absolute top-20 w-screen max-w-[1280px] h-screen lg:mt-0 text-white flex flex-col justify-evenly mx-auto `}
+        >
+
+            </div>
+          </div>
+        </section> */}
       </div>
     </section>
   )
 }
 
-export default Booking
+export default Services

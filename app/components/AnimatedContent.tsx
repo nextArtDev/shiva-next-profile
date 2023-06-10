@@ -24,32 +24,6 @@ export const AnimatedContent = () => {
     setLines((prev) => prev.filter((line) => line.id !== id))
   }
 
-  useEffect(() => {
-    if (!inView) return
-
-    const renderLine = (timeout: number) => {
-      timeoutRef.current = setTimeout(() => {
-        setLines((lines) => [
-          ...lines,
-          {
-            direction: Math.random() > 0.5 ? 'to top' : 'to left',
-            duration: randomNumberBetween(1300, 3500),
-            size: randomNumberBetween(10, 30),
-            id: Math.random().toString(36).substring(7),
-          },
-        ])
-
-        renderLine(randomNumberBetween(800, 2500))
-      }, timeout)
-    }
-
-    renderLine(randomNumberBetween(800, 1300))
-
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current)
-    }
-  }, [inView, setLines])
-
   return (
     <div ref={ref} className="-mt-24 [perspective:2000px]">
       <div
@@ -120,27 +94,27 @@ export const AnimatedContent = () => {
               ' grid grid-cols-3 grid-rows-2 place-items-center gap-y-5 gap-x-5 p-2 text-sm font-semibold text-center'
             )}
           >
-            <div className="task">
-              <span>18</span>
+            <div className="task text-[var(--clr-neon1)] ">
+              <span className="">18+</span>
               <span> سال سابقه</span>
             </div>
-            <div className=" task">
+            <div className=" task text-[var(--clr-neon1)] ">
               <span>2000+</span>
               <span> زایمان طبیعی</span>
             </div>
-            <div className=" task">
+            <div className=" task text-[var(--clr-neon1)] ">
               <span>2000+</span>
               <span> جراحیهای زیبایی زنان</span>
             </div>
-            <div className=" task">
+            <div className=" task text-[var(--clr-neon3)] ">
               <span>2000+</span>
               <span> سزارین</span>
             </div>
-            <div className=" task">
+            <div className=" task text-[var(--clr-neon3)] ">
               <span>2000+</span>
               <span> عمل خارج کردن رحم</span>
             </div>
-            <div className=" task">
+            <div className=" task text-[var(--clr-neon3)] ">
               <span>20000+</span>
               <span> ویزیت</span>
             </div>
