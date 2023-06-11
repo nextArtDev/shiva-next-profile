@@ -91,7 +91,7 @@ export const AnimatedContent = () => {
         >
           <div
             className={classNames(
-              ' grid grid-cols-3 grid-rows-2 place-items-center gap-y-5 gap-x-5 p-2 text-sm font-semibold text-center'
+              ' grid grid-cols-3 grid-rows-2 place-items-center gap-y-5 gap-x-5 p-2 md:p-3 text-sm font-semibold text-center'
             )}
           >
             <div className="task text-[var(--clr-neon1)] ">
@@ -104,7 +104,7 @@ export const AnimatedContent = () => {
             </div>
             <div className=" task text-[var(--clr-neon1)] ">
               <span>2000+</span>
-              <span> جراحیهای زیبایی زنان</span>
+              <span> جراحی زیبایی زنان</span>
             </div>
             <div className=" task text-[var(--clr-neon3)] ">
               <span>2000+</span>

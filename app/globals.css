@@ -68,7 +68,7 @@ body {
   }
 }
 .task {
-  @apply flex flex-col glass h-full w-full justify-center items-center;
+  @apply flex flex-col glass h-full w-full justify-center items-center md:p-3 md:text-base;
 }
 .glass {
   @apply bg-white bg-opacity-10 shadow-lg backdrop-filter backdrop-blur-md border border-opacity-25 border-white rounded-md glassWebkit;
@@ -446,6 +446,81 @@ body {
   background-color: var(--clr-neon);
   z-index: -1;
   transition: opacity 100ms linear;
+}
+
+/* َAbout ME Glass Card  */
+
+.about-glass-card {
+  position: relative;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+.about-glass-card .about-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+
+  width: 280px;
+  min-height: 400px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.26);
+  transform-style: preserve-3d;
+}
+.about-elements {
+  position: absolute;
+  /* top: 25px;
+  left: -10px; */
+  /* width: 100px;
+  height: 50px; */
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateZ(80px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+}
+.about-elements.about-bg {
+  width: 120px;
+  height: 120px;
+  border: none;
+  top: 90px;
+  right: 50px;
+  border-radius: 50%;
+  /* background: rgba(255, 255, 255, 0.1);
+  transform: translateZ(70px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05); */
+}
+
+.about-elements.about-imgBx {
+  top: 25px;
+  position: absolute;
+  left: initial;
+  right: 90px;
+  min-height: 100px;
+  width: auto;
+  padding: 1px;
+  transform: translateZ(130px);
+  backdrop-filter: blur(10px);
+}
+
+.about-elements.about-content {
+  top: 110px;
+  /* bottom: 0; */
+  right: 65px;
+  width: 300px;
+  min-height: 85%;
+  transform: translateZ(160px);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Glass Card  */

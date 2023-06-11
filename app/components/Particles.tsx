@@ -108,7 +108,7 @@ function Particle() {
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
-      options={options}
+      // options={options }
       className="-z-20"
     />
   )

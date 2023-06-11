@@ -101,34 +101,30 @@ const Services = (props: Props) => {
             <div className="lines inner-gradient  before:w-[1000px] before:h-96 after:bg-gray-900 after:blur-2xl after:rounded-tl-lg  rounded-tl-lg" />
           )}
         </div>
-        <div className="absolute inset-0 bg-transparent top-20 flex flex-col md:flex-row ">
+        <div className="absolute inset-0 bg-transparent top-20 flex flex-col lg:flex-row ">
           <article className={`weeks flex flex-col`}>
-            {/* <div className="flex justify-evenly">
-              <h4 className=" subtitle text-right">روز</h4>
-              <h4 className="subtitle">ساعت‌های فعالیت</h4>
-            </div> */}
             <div className={`week pt-8`}>
               {Days.map((day) => (
                 <div
                   key={day.id}
                   className={`days  flex justify-around items-center p-2 m-4 glass mix-blend-plus-lighter `}
                 >
-                  <div className="flex flex-col md:flex-row py-2 md:px-2 items-center ">
+                  <div className="flex flex-col lg:flex-row py-2 lg:px-2 items-center ">
                     <MdOutlineDateRange
                       className={`icon text-[1rem] my-2 md:mx-2 `}
                     />
                     <h4 className="text-[var(--clr-neon1)]">{day.name}</h4>
                   </div>
                   <div className="place">
-                    <div className="flex flex-col md:flex-row md:justify-evenly md:mr-6 items-center ">
+                    <div className="flex flex-col lg:flex-row lg:justify-evenly lg:mr-6 items-center lg:text-sm ">
                       <MdAccessTime className={`icon text-[1.5rem] m-2 `} />
-                      <p>
+                      <p className="lg:flex-col">
                         از ساعت{' '}
-                        <span className="text-[var(--clr-neon1)] py-2 md:px-2 ">
+                        <span className="text-[var(--clr-neon1)] py-2 lg:px-2 ">
                           {day.activeHours[0]}
                         </span>{' '}
                         تا ساعت{' '}
-                        <span className="text-[var(--clr-neon1)] py-2 md:px-2 ">
+                        <span className="text-[var(--clr-neon1)] py-2 lg:px-2 ">
                           {day.activeHours[1]}
                         </span>{' '}
                       </p>
@@ -142,7 +138,9 @@ const Services = (props: Props) => {
           <article className="z-20 mix-blend-screen mx-auto  ">
             <div className=" bg-violet-800/30 mx-2 p-4 mt-6 text-sm font-semibold z-10 rounded-3xl  mix-blend-multiply ">
               {activePlaceId === 1 ? (
-                <p>خیابان شمس آبادی، ساختمان پزشکان، طبقه دوم، واحد 210</p>
+                <p>
+                  خیابان شمس آبادی، ساختمان پزشکان قمرالدوله، طبقه دوم، واحد 210
+                </p>
               ) : (
                 <p>اصفهان، خیابان شفق، بیمارستان آیین شفق</p>
               )}
