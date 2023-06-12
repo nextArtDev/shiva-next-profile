@@ -40,7 +40,8 @@ module.exports = {
         'glass-gradient':
           'linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%)',
         'lines-gradient':
-          'linear-gradient(transparent,rgb(36, 0, 255),rgb(108, 39, 157),rgb(105, 30, 255),transparent)',
+          // 'linear-gradient(transparent,rgb(36, 0, 255),rgb(108, 39, 157),rgb(105, 30, 255),transparent)',
+          'linear-gradient(transparent,#e2e603,#f0a,rgb(108, 39, 157),#24e0ff,transparent)',
       },
       boxShadow: {
         primary: 'rgba(80, 63, 205, 0.5) 0px 1px 40px',

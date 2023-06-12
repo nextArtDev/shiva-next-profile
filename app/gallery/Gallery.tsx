@@ -1,11 +1,6 @@
 'use client'
 import { FC, useEffect, useRef, useState } from 'react'
 import Particle from '../components/Particles'
-// import image1 from '../../public/images/1.jpg'
-// import image2 from '../../public/images/2.jpg'
-// import image3 from '../../public/images/3.jpg'
-// import image4 from '../../public/images/4.jpg'
-// import image5 from '../../public/images/5.jpg'
 interface GalleryProps {}
 const ITEM_DISTANCE = 200
 const ITEM_ANGLE = -45

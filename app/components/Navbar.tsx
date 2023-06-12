@@ -11,9 +11,9 @@ import IconTelegram from './icons/Telegram'
 
 const menuLinks = [
   { id: 1, name: 'خانه', href: '/' },
-  { id: 4, name: 'خدمات', href: '/services' },
+  // { id: 4, name: 'خدمات', href: '/services' },
   { id: 3, name: 'درباره من', href: 'about' },
-  { id: 6, name: 'بلاگ', href: 'blogs' },
+  // { id: 6, name: 'بلاگ', href: 'blogs' },
   { id: 5, name: 'تماس با من', href: 'connect' },
 ]
 type Props = {}

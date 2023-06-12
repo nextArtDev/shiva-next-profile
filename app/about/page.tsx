@@ -3,6 +3,8 @@ import React, { useRef } from 'react'
 import { motion, useScroll } from 'framer-motion'
 import LiIcons from './components/LiIcons'
 import Tilt from 'react-parallax-tilt'
+import Image from 'next/image'
+import profileImage from '../../public/images/about.png'
 const details = [
   { id: 1, type: 'تولد', time: 'سال 1356', place: 'مینودشت گیلان', info: '' },
   {
@@ -153,6 +155,26 @@ function About() {
             ))}
           </ul>
         </div>
+        <article className="about-glass-card md:mx-10 my-20 md:w-full md:h-full ">
+          <div className="about-elements about-imgBx flex justify-center items-center !w-48 !h-64 !-top-16 !-left-0 ">
+            <Image
+              src={profileImage}
+              alt="شیوا توتونیان"
+              className="w-44 h-60 object-cover "
+            />
+          </div>
+          <div className="about-elements about-bg !bg-[var(--clr-neon1)] !top-9 !right-3"></div>
+
+          <div className="about-card ">
+            <p className="p-4 pt-[70%] text-sm text-white ">
+              مهم ترین لذت زندگی من بودن در کنار خانواده و وقت گذرانی با آنهاست
+              که هیچ جایگزین دیگری برایم ندارد. یکی از بزرگ ترین تفریحاتم طبیعت
+              گردیست و آرزو دارم یک روز تمام جاهای دیدنی ایران را دیده باشم.
+              هنگام بازدید از طبیعت تلاش می کنم که به جز رد پا در طبیعت چیزی
+              نگذارم و بجز عکس چیزی از آن چیزی برندارم.
+            </p>
+          </div>
+        </article>
       </div>
     </div>
   )

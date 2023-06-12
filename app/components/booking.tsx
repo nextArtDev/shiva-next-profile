@@ -65,7 +65,7 @@ const Services = (props: Props) => {
       <h2 className="title">ساعت‌های کاری</h2>
       <div className="relative w-full h-full overflow-hidden ">
         <div className="lines inner-gradient mt-20  before:w-[2000px] before:h-[150%] after:bg-gray-900 after:blur-3xl after:rounded-lg rounded-br-lg rounded-bl-lg" />
-        {/*Right icon is upper part  */}
+        {/*Right upper part  */}
 
         <div
           onClick={() => setActivePlaceId(0)}
@@ -77,14 +77,14 @@ const Services = (props: Props) => {
             <MdOutlinePlace
               className={`icon text-center text-[1.5rem] my-2 `}
             />
-            <h4 className="font-semibold">کلینیک آیین شفق اصفهان </h4>
+            <h4 className="font-semibold">کلینیک آیین شفق </h4>
           </span>
           {activePlaceId === 0 && (
             <div className="lines inner-gradient before:w-[1000px] before:h-96 after:bg-gray-900 after:blur-2xl  after:rounded-tr-lg rounded-tr-lg" />
           )}
         </div>
 
-        {/* Left icon is upper part  */}
+        {/* Left upper part  */}
         <div
           onClick={() => setActivePlaceId(1)}
           className={`absolute left-0 w-[49%] h-20 bg-transparent z-10 overflow-hidden rounded-tl-lg cursor-pointer ${
@@ -95,7 +95,7 @@ const Services = (props: Props) => {
             <MdOutlinePlace
               className={`icon  text-center text-[1.5rem] my-2 `}
             />
-            <h4 className="font-semibold">مطب اصفهان</h4>
+            <h4 className="font-semibold">مطب شمس‌آبادی</h4>
           </span>
           {activePlaceId === 1 && (
             <div className="lines inner-gradient  before:w-[1000px] before:h-96 after:bg-gray-900 after:blur-2xl after:rounded-tl-lg  rounded-tl-lg" />
