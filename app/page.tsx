@@ -8,6 +8,7 @@ import Gallery from './gallery/Gallery'
 // import Services from './components/services/Services'
 import Card from './components/Card'
 import Diseases from './components/diseases/Diseases'
+import { LogoTicker } from './components/logo-tricker/LogoTicker'
 
 export default function Home() {
   return (
@@ -18,13 +19,14 @@ export default function Home() {
       >
         {/* <Navbar /> */}
         <Hero />
+        <LogoTicker />
         <Diseases />
         <Booking />
         {/* <Services /> */}
         <Gallery />
         {/* <Projects /> */}
         {/* <Card /> */}
-        <FeaturedIn />
+        {/* <FeaturedIn /> */}
       </main>
     </>
   )

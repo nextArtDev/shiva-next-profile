@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa-IR" dir="rtl">
-      <body className={`${primaryFont.variable} bg-gray-900 text-white adad `}>
+      <body className={`${primaryFont.variable} bg-black text-white adad `}>
         <Navbar />
         {children}
       </body>
