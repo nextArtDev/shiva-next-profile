@@ -1,10 +1,10 @@
 import React from 'react'
-import EsfahanLogo from '../../public/featuredLogo/esfahan.png'
-import KshanLogo from '../../public/featuredLogo/kashan.png'
-import AnjomanLogo from '../../public/featuredLogo/anjoman.png'
-import SaadiLogo from '../../public/featuredLogo/saadi.png'
-import LenjanLogo from '../../public/featuredLogo/lenjan.png'
-import MotahariLogo from '../../public/featuredLogo/motahari.png'
+import EsfahanLogo from '../public/featuredLogo/esfahan.png'
+import KshanLogo from '../public/featuredLogo/kashan.png'
+import AnjomanLogo from '../public/featuredLogo/anjoman.png'
+import SaadiLogo from '../public/featuredLogo/saadi.png'
+import LenjanLogo from '../public/featuredLogo/lenjan.png'
+import MotahariLogo from '../public/featuredLogo/motahari.png'
 import Image from 'next/image'
 const images = [
   { id: 1, src: EsfahanLogo, alt: 'دانشگاه علوم پزشکی اصفهان' },

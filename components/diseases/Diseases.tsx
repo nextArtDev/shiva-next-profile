@@ -3,7 +3,6 @@ import { FC } from 'react'
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Ilness from './Ilness'
-import Particle from '../Particles'
 
 const diseases = [
   {
@@ -77,12 +76,12 @@ const Diseases: FC<DiseasesProps> = ({}) => {
           drag="x"
           dragConstraints={{ left: 0, right: width }}
           whileTap={{ cursor: 'grabbing' }}
-          className={`innerCrousel flex cursor-grab `}
+          className={`innerCrousel flex cursor-grab -mx-4 `}
         >
           {diseases.map((ilness) => (
             <Ilness
               key={ilness.id}
-              className={`service min-h-[40rem] w-[50rem] `}
+              className={`service min-h-[40rem] w-[45rem] `}
               title={ilness.title}
               text={ilness.description}
             />

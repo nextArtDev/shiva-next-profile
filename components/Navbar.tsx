@@ -38,7 +38,7 @@ const Navbar = (props: Props) => {
     }
   }, [setHamburgerMenuIsOpen])
   return (
-    <header className="font-semibold fixed top-0 left-0 w-full border-b border-[#ffffff20] backdrop-blur-md z-50 ">
+    <header className="font-semibold fixed top-0 left-0 w-full border-b border-[#ffffff20]  backdrop-blur-md z-50 ">
       <Container className="flex h-[var(--navigation-height)] items-center ">
         {/* <Link href="/" className="flex items-center  ">
           <Logo className=" mr-16 ml-6" />
@@ -57,7 +57,7 @@ const Navbar = (props: Props) => {
           >
             <ul
               className={classNames(
-                ' bg-gray-800 md:bg-transparent pr-8 flex flex-col  md:flex-row py-4 items-center h-full [&_a]:flex [&_a]:items-center [&_a:hover]:text-grey [&_a]:text-xl md:[&_a]:text-base [&_li]:ml-6 [&_li]:border-b md:[&_li]:border-none [&_li]:border-white/20 [&_a:hover]:transition-[color, transform] [&_a]:h-[var(--navigation-height)] [&_a]:w-full md:[&_a]:translate-y-0 [&_a]:translate-y-8  [&_a]:transition-transform [&_a]:duration-300 ease-in  ',
+                'bg-gray-900 md:bg-transparent pr-8 flex flex-col  md:flex-row py-4 items-center h-full [&_a]:flex [&_a]:items-center [&_a:hover]:text-grey [&_a]:text-xl md:[&_a]:text-base [&_li]:ml-6 [&_li]:border-b md:[&_li]:border-none [&_li]:border-white/20 [&_a:hover]:transition-[color, transform] [&_a]:h-[var(--navigation-height)] [&_a]:w-full md:[&_a]:translate-y-0 [&_a]:translate-y-8  [&_a]:transition-transform [&_a]:duration-300 ease-in  ',
                 hamburgerMenuIsOpen && '[&_a]:translate-y-0'
               )}
             >

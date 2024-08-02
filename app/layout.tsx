@@ -1,10 +1,11 @@
-import Navbar from './components/Navbar'
+import Navbar from '@/components/Navbar'
 import './globals.css'
 
 import localFont from 'next/font/local'
+import StarsCanvas from '@/components/StarBackground'
 
 const primaryFont = localFont({
-  src: '../public/fonts/IRANSansXV.woff2',
+  src: '../public/fonts/farsi.woff2',
   variable: '--font-sans',
 })
 const secondaryFont = localFont({
@@ -16,7 +17,7 @@ const ternaryFont = localFont({
   variable: '--font-rokh',
 })
 const numericFont = localFont({
-  src: '../public/fonts/IRANSansXFaNum-Regular.woff2',
+  src: '../public/fonts/farsiNum-Regular.woff2',
   variable: '--font-adad',
 })
 export const metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="fa-IR" dir="rtl">
       <body className={`${primaryFont.variable} bg-gray-900 text-white adad `}>
+        <StarsCanvas />
         <Navbar />
         {children}
       </body>

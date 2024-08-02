@@ -5,8 +5,9 @@ import LiIcons from './components/LiIcons'
 import Tilt from 'react-parallax-tilt'
 import Image from 'next/image'
 import profileImage from '../../public/images/about.png'
+
 const details = [
-  { id: 1, type: 'تولد', time: 'سال 1356', place: 'مینودشت گیلان', info: '' },
+  { id: 1, type: 'تولد', time: 'سال 1356', place: 'مینودشت گلستان', info: '' },
   {
     id: 2,
     type: 'تحصیلات',
@@ -18,7 +19,7 @@ const details = [
     id: 3,
     type: 'دانشگاه',
     time: '',
-    place: 'دانشگاه اصفهان',
+    place: 'دانشگاه علوم پزشکی اصفهان',
     info: 'در دانشگاه علوم پزشکی اصفهان تحصیل کردم و در رشته پزشکی موفق به کسب دکترای پزشکی عمومی از این دانشگاه  شدم',
   },
   {
@@ -95,6 +96,11 @@ const Details = ({
   )
 }
 
+// export const metadata = {
+//   title: 'درباره من | دکتر شیوا توتونیان',
+//   description:
+//     'وبسایت رسمی دکتر شیوا تتوتونیان متخصص زنان، زایمان، نازایی و جراحی‌های زیبایی زنان',
+// }
 function About() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -108,7 +114,7 @@ function About() {
       </h2>
       <div className="flex flex-col md:flex-row md:gap-20">
         <article className="about-glass-card md:mx-10 my-20 md:w-full md:h-full ">
-          <div className="about-elements about-bg !bg-[var(--clr-neon)]"></div>
+          <div className="about-elements about-bg !right-5 !bg-[var(--clr-neon)]"></div>
           <div className="about-elements about-imgBx flex justify-center items-center !w-56 !h-48 !-top-16 !right-6 ">
             <video
               autoPlay
@@ -155,7 +161,7 @@ function About() {
             ))}
           </ul>
         </div>
-        <article className="about-glass-card md:mx-10 my-20 md:w-full md:h-full ">
+        <article className="about-glass-card mr-8 md:mx-10 my-20 md:w-full md:h-full ">
           <div className="about-elements about-imgBx flex justify-center items-center !w-48 !h-64 !-top-16 !-left-0 ">
             <Image
               src={profileImage}
@@ -163,9 +169,9 @@ function About() {
               className="w-44 h-60 object-cover "
             />
           </div>
-          <div className="about-elements about-bg !bg-[var(--clr-neon1)] !top-9 !right-3"></div>
+          <div className="about-elements about-bg !bg-[var(--clr-neon1)] !top-9 !left-3"></div>
 
-          <div className="about-card ">
+          <div className="about-card left-5 ">
             <p className="p-4 pt-[70%] text-sm text-white ">
               مهم ترین لذت زندگی من بودن در کنار خانواده و وقت گذرانی با آنهاست
               که هیچ جایگزین دیگری برایم ندارد. یکی از بزرگ ترین تفریحاتم طبیعت

@@ -108,6 +108,7 @@ module.exports = {
         },
       },
       animation: {
+        'spin-slow': 'spin 5s linear infinite',
         'service-line': 'service-line 8s linear infinite',
         'fade-in': 'fade-in 1000ms var(--animation-delay, 0ms) ease forwards',
         'image-rotate': 'image-rotate 2000ms ease-in-out forwards',
