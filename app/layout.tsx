@@ -4,7 +4,7 @@ import './globals.css'
 import localFont from 'next/font/local'
 
 const primaryFont = localFont({
-  src: '../public/fonts/IRANSansXV.woff2',
+  src: '../public/fonts/farsi.woff2',
   variable: '--font-sans',
 })
 const secondaryFont = localFont({
@@ -16,7 +16,7 @@ const ternaryFont = localFont({
   variable: '--font-rokh',
 })
 const numericFont = localFont({
-  src: '../public/fonts/IRANSansXFaNum-Regular.woff2',
+  src: '../public/fonts/farsiNum-Regular.woff2',
   variable: '--font-adad',
 })
 export const metadata = {

@@ -262,7 +262,7 @@ body {
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(to right, transparent, #590fb7);
+  background: linear-gradient(to right, transparent, #f0a);
   animation: animate-one 15s ease-in infinite forwards;
 }
 
@@ -282,7 +282,7 @@ body {
   right: 0;
   width: 5px;
   height: 100%;
-  background: linear-gradient(to bottom, transparent, #c04dff);
+  background: linear-gradient(to bottom, transparent, #24e0ff);
   animation: animate-two 15s ease-in infinite forwards;
 }
 
@@ -454,6 +454,7 @@ body {
   position: relative;
   border-radius: 20px;
   transform-style: preserve-3d;
+  max-width: 100vw;
 }
 .about-glass-card .about-card {
   position: relative;
@@ -499,9 +500,9 @@ body {
 }
 
 .about-elements.about-imgBx {
-  top: 25px;
+  top: 35px;
   position: absolute;
-  left: initial;
+  /* left: initial; */
   right: 90px;
   min-height: 100px;
   width: auto;
@@ -513,7 +514,7 @@ body {
 .about-elements.about-content {
   top: 110px;
   /* bottom: 0; */
-  right: 65px;
+  right: 50px;
   width: 300px;
   min-height: 85%;
   transform: translateZ(160px);
@@ -533,7 +534,7 @@ body {
 .glass-card .card {
   position: relative;
   background: rgba(255, 255, 255, 0.08);
-  width: 350px;
+  width: 300px;
   min-height: 500px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.56);

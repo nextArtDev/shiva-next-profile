@@ -69,8 +69,10 @@ const Services = (props: Props) => {
 
         <div
           onClick={() => setActivePlaceId(0)}
-          className={`absolute top-[2px] right-0 w-[49%] h-20 bg-transparent overflow-hidden rounded-tr-lg cursor-pointer ${
-            activePlaceId === 0 ? '' : 'booking-glass-right text-white/40'
+          className={`absolute right-0 w-[49%] h-20 bg-transparent overflow-hidden rounded-tr-lg cursor-pointer  ${
+            activePlaceId === 0
+              ? 'text-[--clr-neon3]'
+              : 'booking-glass-right text-white/40'
           } `}
         >
           <span className="absolute w-full flex flex-col justify-evenly items-center text-center  z-20 ">
@@ -87,8 +89,10 @@ const Services = (props: Props) => {
         {/* Left upper part  */}
         <div
           onClick={() => setActivePlaceId(1)}
-          className={`absolute left-0 w-[49%] h-20 bg-transparent z-10 overflow-hidden rounded-tl-lg cursor-pointer ${
-            activePlaceId === 1 ? '' : 'booking-glass-left  text-white/40 '
+          className={`absolute left-0 w-[49%] h-20 bg-transparent z-10 overflow-hidden rounded-tl-lg cursor-pointer  ${
+            activePlaceId === 1
+              ? 'text-[--clr-neon3]'
+              : 'booking-glass-left  text-white/40 '
           }  `}
         >
           <span className="absolute w-full flex flex-col justify-center items-center text-center  z-20  ">
@@ -103,11 +107,11 @@ const Services = (props: Props) => {
         </div>
         <div className="absolute inset-0 bg-transparent top-20 flex flex-col lg:flex-row ">
           <article className={`weeks flex flex-col`}>
-            <div className={`week pt-8`}>
+            <div className={`week pt-4`}>
               {Days.map((day) => (
                 <div
                   key={day.id}
-                  className={`days  flex justify-around items-center p-2 m-4 glass mix-blend-plus-lighter `}
+                  className={`days  flex justify-around items-center p-1 m-2 glass mix-blend-plus-lighter `}
                 >
                   <div className="flex flex-col lg:flex-row py-2 lg:px-2 items-center ">
                     <MdOutlineDateRange
@@ -117,14 +121,14 @@ const Services = (props: Props) => {
                   </div>
                   <div className="place">
                     <div className="flex flex-col lg:flex-row lg:justify-evenly lg:mr-6 items-center lg:text-sm ">
-                      <MdAccessTime className={`icon text-[1.5rem] m-2 `} />
+                      <MdAccessTime className={`icon text-[1rem] m-1 `} />
                       <p className="lg:flex-col">
                         از ساعت{' '}
-                        <span className="text-[var(--clr-neon1)] py-2 lg:px-2 ">
+                        <span className="text-[var(--clr-neon1)] py-1 lg:px-2 ">
                           {day.activeHours[0]}
                         </span>{' '}
                         تا ساعت{' '}
-                        <span className="text-[var(--clr-neon1)] py-2 lg:px-2 ">
+                        <span className="text-[var(--clr-neon1)] py-1 lg:px-2 ">
                           {day.activeHours[1]}
                         </span>{' '}
                       </p>
@@ -136,13 +140,13 @@ const Services = (props: Props) => {
           </article>
           {/* map  */}
           <article className="z-20 mix-blend-screen mx-auto  ">
-            <div className=" bg-violet-800/30 mx-2 p-4 mt-6 text-sm font-semibold z-10 rounded-3xl  mix-blend-multiply ">
+            <div className=" bg-violet-800/30 mx-2 p-4 mt-6 text-sm font-semibold z-10 rounded-3xl  mix-blend-multiply text-center ">
               {activePlaceId === 1 ? (
                 <p>
                   خیابان شمس آبادی، ساختمان پزشکان قمرالدوله، طبقه دوم، واحد 210
                 </p>
               ) : (
-                <p>اصفهان، خیابان شفق، بیمارستان آیین شفق</p>
+                <p>اصفهان، خیابان شفق، کلینیک آیین شفق</p>
               )}
             </div>
             <div
@@ -160,14 +164,14 @@ const Services = (props: Props) => {
                 style={{ borderRadius: '50%', opacity: '60%' }}
               ></iframe>
               <div
-                className="rounded-full absolute inset-0 w-full h-full text-violet-900/50 drop-shadow-2xl cursor-pointer flex justify-center items-center text-9xl outline-8 outline-double -outline-offset-8 outline-violet-900/60 "
+                className="rounded-full absolute inset-0 w-full h-full text-[--clr-neon3] drop-shadow-2xl cursor-pointer flex justify-center items-center text-9xl outline-8 outline-double -outline-offset-8 outline-[--clr-neon] "
                 onClick={() =>
                   window.open(
                     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3359.2407402349572!2d51.66354817552245!3d32.653037240311974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fbc3575649bfa29%3A0xd21a5cbab64fd330!2z2LPYp9iu2KrZhdin2YYg2b7Ysti02qnYp9mGINmC2YXYsSDYp9mE2K_ZiNmE2Yc!5e0!3m2!1sen!2s!4v1686296244882!5m2!1sen!2s'
                   )
                 }
               >
-                <MdShareLocation className="text-violet-900/50 drop-shadow-2xl " />
+                <MdShareLocation className="text-[--clr-neon] opacity-60 drop-shadow-2xl " />
               </div>
             </div>
           </article>

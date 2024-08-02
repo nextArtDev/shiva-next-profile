@@ -18,7 +18,7 @@ const Card: FC<CardProps> = ({ title, content }) => {
     >
       <div className="elements bg"></div>
       <div className="elements imgBx flex justify-center items-center ">
-        <p className="!text-[var(--clr-neon)] font-semibold  neon-button text-sm">
+        <p className="!text-[var(--clr-neon)] font-semibold  text-sm">
           {title}
         </p>
       </div>

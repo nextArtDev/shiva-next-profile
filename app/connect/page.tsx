@@ -1,4 +1,9 @@
 import { MdShareLocation } from 'react-icons/md'
+export const metadata = {
+  title: 'تماس با من | دکتر شیوا توتونیان',
+  description:
+    'وبسایت رسمی دکتر شیوا تتوتونیان متخصص زنان، زایمان، نازایی و جراحی‌های زیبایی زنان',
+}
 
 function Connect() {
   return (
@@ -15,26 +20,24 @@ function Connect() {
       </video>
       <div className={' bannerClip flex flex-col gap-12'}>
         <div className={'mb-8'}>
-          <h2 className="title text-[var(--clr-neon1)]  ">
-            با من در تماس باشید
-          </h2>
+          <h2 className="title text-[var(--clr-neon1)]  ">تماس با من </h2>
         </div>
         <div
           className={
             'max-w-md font-semibold flex flex-col gap-8 text-center text-base'
           }
         >
-          <div>
+          <div className=" bg-white/25 py-1 rounded-xl px-2">
             <h2 className="font-bold text-[var(--clr-neon)] ">مطب: </h2>
             <span className=" text-[var(--clr-neon3)] text-lg ">
               اصفهان، خیابان شمس آبادی، ساختمان پزشکان قمرالدوله، طبقه دوم، واحد
               210
             </span>
           </div>
-          <div>
+          <div className=" bg-white/25 py-1 rounded-xl px-2">
             <h2 className="font-bold text-[var(--clr-neon)]">کلینیک: </h2>
-            <span className=" text-[var(--clr-neon3)] text-lg ">
-              اصفهان، خیابان شفق، بیمارستان آیین شفق
+            <span className=" text-[var(--clr-neon3)] text-lg  ">
+              اصفهان، خیابان شفق، کلینیک آیین شفق
             </span>
           </div>
         </div>
