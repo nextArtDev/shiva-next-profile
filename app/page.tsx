@@ -9,6 +9,7 @@ import Gallery from './gallery/Gallery'
 import Card from './components/Card'
 import Diseases from './components/diseases/Diseases'
 import { LogoTicker } from './components/logo-tricker/LogoTicker'
+import Places from './components/Places'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         {/* <Navbar /> */}
         <Hero />
         <LogoTicker />
+        <Places />
         <Diseases />
         <Booking />
         {/* <Services /> */}
