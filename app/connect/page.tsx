@@ -37,10 +37,14 @@ function Connect() {
           <div className=" bg-white/25 py-1 rounded-xl px-2">
             <h2 className="font-bold text-[var(--clr-neon)]">کلینیک: </h2>
             <span className=" text-[var(--clr-neon3)] text-lg  ">
+<<<<<<< HEAD
               <p>
                 اصفهان، ابتدای اتوبان ذوب آهن، بلوار شفق، نبش کوچه 12، کلینیک
                 آیین شفق
               </p>{' '}
+=======
+              اصفهان، خیابان شفق، کلینیک آیین شفق
+>>>>>>> d5b4bd7c27538e4ec0175902755af3dc0fc8bff5
             </span>
           </div>
         </div>

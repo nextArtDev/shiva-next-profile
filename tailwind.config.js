@@ -47,6 +47,15 @@ module.exports = {
         primary: 'rgba(80, 63, 205, 0.5) 0px 1px 40px',
       },
       keyframes: {
+           'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },  
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
+          },
+        },
         'service-line': {
           '0%': { transform: 'translate(-50%, -50%) rotate(0deg)' },
           '100%': { transform: 'translate(-50%, -50%) rotate(360deg)' },
@@ -108,7 +117,12 @@ module.exports = {
         },
       },
       animation: {
+<<<<<<< HEAD
         'spin-slow': 'spin 5s linear infinite',
+=======
+         'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        gradient: "gradient 8s linear infinite",
+>>>>>>> d5b4bd7c27538e4ec0175902755af3dc0fc8bff5
         'service-line': 'service-line 8s linear infinite',
         'fade-in': 'fade-in 1000ms var(--animation-delay, 0ms) ease forwards',
         'image-rotate': 'image-rotate 2000ms ease-in-out forwards',

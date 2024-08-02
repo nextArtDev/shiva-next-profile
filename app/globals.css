@@ -261,9 +261,15 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+<<<<<<< HEAD
   height: 2px;
   background: linear-gradient(to right, transparent, #f0a);
   animation: animate-one 3s ease-in infinite;
+=======
+  height: 5px;
+  background: linear-gradient(to right, transparent, #f0a);
+  animation: animate-one 15s ease-in infinite forwards;
+>>>>>>> d5b4bd7c27538e4ec0175902755af3dc0fc8bff5
 }
 
 @keyframes animate-one {
@@ -283,7 +289,11 @@ body {
   width: 2px;
   height: 100%;
   background: linear-gradient(to bottom, transparent, #24e0ff);
+<<<<<<< HEAD
   animation: animate-two 3s ease-in infinite;
+=======
+  animation: animate-two 15s ease-in infinite forwards;
+>>>>>>> d5b4bd7c27538e4ec0175902755af3dc0fc8bff5
 }
 
 @keyframes animate-two {
